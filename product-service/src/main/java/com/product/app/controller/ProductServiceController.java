@@ -31,6 +31,10 @@ public class ProductServiceController {
 	ResponseEntity<ProductModel> getProductById(@PathVariable int id) {
 		return ResponseEntity.ok().body(productService.findProductById(id));
 	}
+	@GetMapping("getName/{name}")
+	ResponseEntity<ProductModel> getProductByName(@PathVariable String name) {
+		return ResponseEntity.ok().body(productService.findProductByName(name));
+	}
 	
 	@PostMapping("add")
 	void addProduct(@RequestBody ProductModel model) {

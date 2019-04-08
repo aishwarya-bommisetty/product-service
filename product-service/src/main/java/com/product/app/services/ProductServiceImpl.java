@@ -60,5 +60,11 @@ public class ProductServiceImpl implements ProductService{
 		productRepository.deleteById(id);
 		
 	}
+
+	@Override
+	public ProductModel findProductByName(String name) {
+		ProductEntity entity = productRepository.findFirstByName(name);
+		return mapper.map(entity, ProductModel.class);
+	}
 	
 }

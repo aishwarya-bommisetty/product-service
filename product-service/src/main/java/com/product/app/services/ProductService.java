@@ -30,5 +30,10 @@ public interface ProductService {
 	 * @param id
 	 */
 	void deleteById(int id);
-
+	
+	/**
+	 * @param name
+	 * @return
+	 */
+	ProductModel findProductByName(String name);
 }
